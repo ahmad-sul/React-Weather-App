@@ -28,7 +28,7 @@ this.setState({
 
 
   fetchWeatherData=(city)=>{
-    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${process.env.REACT_APP_API_KEY}&units=metric`)
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=b3499bd5b6f74cd4cce4808c6b12531f&units=metric`)
 
     .then(Response=>Response.json())
     .then(data=>this.setState({weatherData:data}))
@@ -42,7 +42,7 @@ this.setState({
   }
 
   render() {
-    console.log(process.env.REACT_APP_API_KEY)
+    // console.log(process.env.REACT_APP_API_KEY)
     console.log(this.state.weatherData)
     let data=this.state.weatherData
     return (
