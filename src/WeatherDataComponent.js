@@ -14,26 +14,39 @@ export default class WeatherDataComponent extends Component {
 
   render() {
     return (
-      <div className='info w-25 mt-3'>
-        <div className='d-flex align-items-center'>
-        <img
-        className='w-75'
-          src={`http://openweathermap.org/img/wn/${this.props.icon}@4x.png`}
-          alt="img"
-        />
-         <div className='d-flex flex-column '>
-         <h1 className='my-4 text-center'>{this.props.temp}&#186;</h1>
-          <p className='m-auto'>Feels like {this.props.feelsLike}&#186;</p>
-        </div>
-        
-        </div>
-       
+      <div className="card info  mt-3">
+        <div className="d-flex flex-column">
+          <div>
+            <h2 className="mt-2 text-center">
+              {this.props.city} <span className="fs-6 rounded-pill bg-warning d-inline-block p-1">{this.props.country}</span>
+            </h2>
+            <img
+              className=""
+              src={`http://openweathermap.org/img/wn/${this.props.icon}@4x.png`}
+              alt="img"
+              width={360}
+            />
+          </div>
 
-       
-        <div className=''>
-          <p className='fs-3 ms-3'>humidity: {this.props.humidity}</p>
-          <p className='fs-3 ms-3'>maxTemp: <span className='text-danger'>{this.props.maxTemp}&#186;</span></p>
-          <p className='fs-3 ms-3'>minTemp: <span className='text-primary'>{this.props.minTemp}&#186;</span></p>
+          <div className="d-flex align-items-center justify-content-center gap-3">
+            <div>
+              <h1 className=" text-center bg-warning rounded-pill p-3">{this.props.temp}&#186;</h1>
+            </div>
+
+            <div>
+              <p className="">Feels like {this.props.feelsLike}&#186;</p>
+
+              <p className="">humidity: {this.props.humidity}</p>
+              <p className="">
+                maxTemp:{" "}
+                <span className="text-danger">{this.props.maxTemp}&#186;</span>
+              </p>
+              <p className="">
+                minTemp:{" "}
+                <span className="text-primary">{this.props.minTemp}&#186;</span>
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     );

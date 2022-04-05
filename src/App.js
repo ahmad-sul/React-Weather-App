@@ -7,7 +7,7 @@ import './app.css'
 export default class App extends Component {
 
     state={
-      cityName: '',
+      cityName: 'Berlin',
       weatherData:null
     }
 
@@ -20,7 +20,7 @@ this.setState({
 
   formSubmission=(e)=>{
     e.preventDefault() // don't forget (we use it to stop refresh the bage).
-    console.log(this.state.cityName)
+    // console.log(this.state.cityName)
     if(this.state.cityName.trim() !== ''){
         this.fetchWeatherData(this.state.cityName)
     }
@@ -43,19 +43,21 @@ this.setState({
 
   render() {
     // console.log(process.env.REACT_APP_API_KEY)
-    console.log(this.state.weatherData)
+    // console.log(this.state.weatherData)
     let data=this.state.weatherData
     return (
       <div className='w-100  vh-100 d-flex flex-column align-items-center banner' >
       <h1 className='my-5'>Weather APP</h1>
-      <form className='d-flex w-25' onSubmit={this.formSubmission}>
-      <input type="text" className="form-control" id="exampleFormControlInput1" placeholder="Enter Your City Name" onChange={this.getUserCity}/>
+      
+      <form className='d-flex ' onSubmit={this.formSubmission}>
+      <input type="text" className="form-control" id="exampleFormControlInput1" placeholder="Enter Your City" onChange={this.getUserCity}/>
       <button type="submit" class="btn btn-success w-100">Get Weather Data</button>
       
       </form>
 
       {data && <WeatherDataComponent 
       city={this.state.cityName}
+      country={this.state.weatherData.sys.country}
       temp={this.state.weatherData.main.temp}
       maxTemp={this.state.weatherData.main.temp_max}
       minTemp={this.state.weatherData.main.temp_min}
