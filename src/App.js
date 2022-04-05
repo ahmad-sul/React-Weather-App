@@ -46,8 +46,8 @@ this.setState({
     // console.log(this.state.weatherData)
     let data=this.state.weatherData
     return (
-      <div className='w-100  vh-100 d-flex flex-column align-items-center banner' >
-      <h1 className='my-5'>Weather APP</h1>
+      <div className='App vh-100 d-flex flex-column align-items-center banner' >
+      <h1 className='my-5 text-light'>Weather APP</h1>
       
       <form className='d-flex ' onSubmit={this.formSubmission}>
       <input type="text" className="form-control" id="exampleFormControlInput1" placeholder="Enter Your City" onChange={this.getUserCity}/>

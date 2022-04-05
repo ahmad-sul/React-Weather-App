@@ -1,12 +1,15 @@
 :root{
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
+.App{
+    background-color: rgb(17, 3, 43);
+}
 
 .banner{
     font-family: Georgia, 'Times New Roman', Times, serif;
-    background-image: url('./1_GsImz-edoeuqCMfKxDus0w.jpeg');
+  
 }
 
 .info{
-    background-color: rgba(0, 0, 0, 0.252);
+    box-shadow: 10px 8px 8px whitesmoke;
 }
